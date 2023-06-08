@@ -4,4 +4,4 @@ spring:
   data:
     mongodb:
       database: ${spring.application.name}
-      uri: mongodb+srv://${mongodb-user}:${mongodb-password}@cluster0.dkvbydh.mongodb.net/${spring.application.name}?retryWrites=true&w=majority
+      uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@cluster0.dkvbydh.mongodb.net/${spring.application.name}?retryWrites=true&w=majority
