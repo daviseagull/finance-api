@@ -5,3 +5,20 @@ spring:
     mongodb:
       database: ${spring.application.name}
       uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@cluster0.dkvbydh.mongodb.net/${spring.application.name}?retryWrites=true&w=majority
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            scope: ${SCOPES}
+      resourceserver:
+        jwt:
+          issuer-uri: accounts.google.com
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
