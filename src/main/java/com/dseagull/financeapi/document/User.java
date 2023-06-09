@@ -2,10 +2,10 @@ package com.dseagull.financeapi.document;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.lang.NonNull;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -22,12 +22,15 @@ public class User implements UserDetails {
 
   private boolean enabled;
 
+  private Set<String> accounts;
+
+  private Set<String> cards;
+
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return new ArrayList<>();
   }
 
-  @NonNull
   @Override
   public String getUsername() {
     return username;
