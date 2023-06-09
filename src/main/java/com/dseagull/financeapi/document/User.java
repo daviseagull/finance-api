@@ -1,6 +1,5 @@
 package com.dseagull.financeapi.document;
 
-import com.dseagull.financeapi.model.Name;
 import java.util.ArrayList;
 import java.util.Collection;
 import lombok.*;
@@ -19,11 +18,7 @@ public class User implements UserDetails {
 
   @Id private String id;
 
-  private Name name;
-
   private String username;
-
-  private String password;
 
   private boolean enabled;
 
@@ -58,9 +53,8 @@ public class User implements UserDetails {
     return enabled;
   }
 
-  @NonNull
   @Override
   public String getPassword() {
-    return password;
+    return null;
   }
 }
